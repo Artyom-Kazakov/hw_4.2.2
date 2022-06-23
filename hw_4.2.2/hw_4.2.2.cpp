@@ -7,9 +7,9 @@ struct account {
 	float balance = 0;
 };
 
-void balance_edit(account* acc) {
+void balance_edit(account& acc) {
 	std::cout << "Введите новый баланс: ";
-	std::cin >> acc->balance;
+	std::cin >> acc.balance;
 }
 
 int main() {
@@ -24,7 +24,7 @@ int main() {
 	std::cout << "Введите баланс: ";
 	std::cin >> acc.balance;
 
-	balance_edit(&acc);
+	balance_edit(acc);
 
 	std::cout << "Ваш счёт: " << acc.name << ", " << acc.number << ", " << acc.balance;
 }
